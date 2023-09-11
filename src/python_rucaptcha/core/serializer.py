@@ -27,7 +27,7 @@ class CaptchaOptionsSocketSer(MyBaseModel):
     lang: str = ""
     hintText: constr(max_length=139) = ""
     hintImg: str = ""
-    softId: str = Field(APP_KEY, const=True)
+    softId: str = Field(APP_KEY)
 
 
 class NormalCaptchaSocketSer(BaseModel):
@@ -80,7 +80,7 @@ HTTP API Serializers
 class PostRequestSer(MyBaseModel):
     key: str
     method: str
-    soft_id: str = Field(APP_KEY, const=True)
+    soft_id: str = Field(APP_KEY)
     field_json: int = Field(1, alias="json")
 
 
